@@ -8,6 +8,12 @@
     <artifactId>spring-cloud-alibaba</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <modules>
+        <module>alibaba-common</module>
+        <module>alibaba-user-service</module>
+        <module>alibaba-order-service</module>
+        <module>alibaba-video-service</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
