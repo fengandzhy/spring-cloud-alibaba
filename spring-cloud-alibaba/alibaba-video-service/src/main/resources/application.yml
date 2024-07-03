@@ -9,9 +9,16 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/alibaba-video?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Pacific/Auckland
     username: root
     password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.242.251.45:8848
+        
 
 # 控制台输出sql、下划线转驼峰
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
+    
+  
