@@ -29,9 +29,8 @@ public class OrderController {
         Video video = restTemplate.getForObject(url, Video.class);
         VideoOrder order = new VideoOrder();
         order.setVideoId(video.getId());
-        order.setVideoTitle(video.getTitle());
-        
-        return null;
+        order.setVideoTitle(video.getTitle());        
+        return order;
     }
 
     @Autowired
