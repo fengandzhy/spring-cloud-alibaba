@@ -25,7 +25,8 @@ public class OrderController {
     public VideoOrder getOrderById(@PathVariable int id){
         List<ServiceInstance> serviceInstanceList = discoveryClient.getInstances("alibaba-video-service");
         ServiceInstance serviceInstance = serviceInstanceList.get(0);
-        String url = "http://" + serviceInstance.getHost()+":"+serviceInstance.getPort()+"/api/v1/video/"+id;
+//        String url = "http://" + serviceInstance.getHost()+":"+serviceInstance.getPort()+"/api/v1/video/"+id;
+        String url = "http://alibaba-video-service/api/v1/video/"+id; // 这里只有用Ribbon 才能用这种方式调用 
         Video video = restTemplate.getForObject(url, Video.class);
         VideoOrder order = new VideoOrder();
         order.setVideoId(video.getId());
