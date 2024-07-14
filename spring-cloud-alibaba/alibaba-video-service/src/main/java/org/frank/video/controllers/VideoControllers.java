@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/vi/video")
+@RequestMapping("/api/v1/video")
 public class VideoControllers {
     
     private VideoService videoService;
