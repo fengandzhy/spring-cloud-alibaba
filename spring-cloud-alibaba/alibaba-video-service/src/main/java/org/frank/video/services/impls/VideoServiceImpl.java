@@ -16,6 +16,11 @@ public class VideoServiceImpl implements VideoService {
         return videoMapper.findById(id);
     }
 
+    @Override
+    public int save(Video video) {
+        return 0;
+    }
+
     @Autowired
     public void setVideoMapper(VideoMapper videoMapper) {
         this.videoMapper = videoMapper;
