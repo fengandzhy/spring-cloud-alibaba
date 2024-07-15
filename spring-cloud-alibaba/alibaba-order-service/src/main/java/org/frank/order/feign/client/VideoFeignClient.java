@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name="alibaba-video-service")
 public interface VideoFeignClient {
 
-//    @GetMapping(value = "/api/v1/video/find")
-//    Video findById(@RequestParam("videoId") int videoId);
+    @GetMapping(value = "/api/v1/video/find")
+    Video findById(@RequestParam("videoId") int videoId);
 
     @GetMapping(value = "/api/v1/video/find/{videoId}")
     Video getById(@PathVariable("videoId") int videoId);
