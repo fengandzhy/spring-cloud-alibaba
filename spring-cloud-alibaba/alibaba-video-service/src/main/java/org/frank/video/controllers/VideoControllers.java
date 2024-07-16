@@ -1,11 +1,9 @@
 package org.frank.video.controllers;
 
+import org.frank.domains.Video;
 import org.frank.video.services.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/video")
@@ -22,6 +20,12 @@ public class VideoControllers {
     public Object findVideoById(@RequestParam int videoId){
         return videoService.findById(videoId);
     }
+    
+    @PostMapping("/save")
+    public int saveVideo(@RequestBody Video video){
+        return videoService.save(video);
+    }
+    
 
     @Autowired
     public void setVideoService(VideoService videoService) {

@@ -18,7 +18,7 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public int save(Video video) {
-        return 0;
+        return videoMapper.save(video);
     }
 
     @Autowired
