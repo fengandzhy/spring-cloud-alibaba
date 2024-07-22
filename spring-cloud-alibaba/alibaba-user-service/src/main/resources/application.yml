@@ -13,6 +13,10 @@ spring:
     nacos:
       discovery:
         server-addr: 47.242.251.45:8848
+    sentinel:
+      transport:
+        dashboard: 47.242.251.45:8081
+        port: 9999
 
 # 控制台输出sql、下划线转驼峰
 mybatis:
