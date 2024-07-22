@@ -1,5 +1,6 @@
 package org.frank.order.beans;
 
+import feign.Logger;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,5 +13,10 @@ public class OrderConfiguration {
     @LoadBalanced
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
+    }
+
+    @Bean
+    Logger.Level feignLoggerLevel() {
+        return Logger.Level.FULL;
     }
 }

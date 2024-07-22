@@ -5,4 +5,6 @@ import org.frank.domains.Video;
 public interface VideoService {
     
     Video findById(int id);
+    
+    int save(Video video);
 }
