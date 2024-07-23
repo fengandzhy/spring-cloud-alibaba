@@ -1,5 +1,6 @@
 package org.frank.video.controllers;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import org.frank.domains.Video;
 import org.frank.video.services.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ public class VideoControllers {
     
     private VideoService videoService;
     
-    @RequestMapping("/find/{id}")
+    @RequestMapping("/find/{id}")    
     public Object getVideoById(@PathVariable int id){
         return videoService.findById(id);
     }
