@@ -13,6 +13,7 @@
         <module>alibaba-user-service</module>
         <module>alibaba-order-service</module>
         <module>alibaba-video-service</module>
+        <module>alibaba-api-gateway</module>
     </modules>
 
     <properties>
