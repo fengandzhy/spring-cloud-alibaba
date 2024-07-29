@@ -21,6 +21,15 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    
+    <!--
+        在父项目中使用dependencyManagement来定义依赖的版本号后，子项目中的依赖就不需要再显式地指定版本号。
+        这种方式使得子项目能够自动继承和使用父项目中定义的版本号，从而简化了依赖管理并确保了一致性。
+        
+        在父项目的POM文件中，通过dependencyManagement引入了spring-boot-dependencies BOM，并指定了Spring Boot的版本号2.3.3.RELEASE。
+        在子项目的POM文件中，通过<parent>标签指定了父项目，这样子项目就自动继承了父项目中定义的依赖管理。
+        子项目中引用Spring Boot相关依赖时，不需要显式指定版本号，因为这些版本号已经在父项目的dependencyManagement中定义好了。
+    -->
 
     <dependencyManagement>
         <dependencies>
