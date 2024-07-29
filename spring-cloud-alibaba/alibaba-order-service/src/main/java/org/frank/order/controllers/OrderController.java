@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/api/v1/order")
@@ -23,7 +24,8 @@ public class OrderController {
     private VideoFeignClient videoFeignClient;
     
     @RequestMapping("/find/{videoId}")
-    public VideoOrder getOrderById(@PathVariable int videoId){
+    public VideoOrder getOrderById(@PathVariable int videoId) throws InterruptedException {
+//        TimeUnit.SECONDS.sleep(13);
         List<ServiceInstance> serviceInstanceList = discoveryClient.getInstances("alibaba-video-service");
         ServiceInstance serviceInstance = serviceInstanceList.get(0);
 //        String url = "http://" + serviceInstance.getHost()+":"+serviceInstance.getPort()+"/api/v1/video/"+id;
