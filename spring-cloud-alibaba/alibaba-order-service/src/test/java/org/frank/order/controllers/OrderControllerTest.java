@@ -1,6 +1,7 @@
 package org.frank.order.controllers;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,13 +19,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class OrderControllerTest {
 
+    private final TestRestTemplate template;
+
     @Autowired
-    private TestRestTemplate template;
+    public OrderControllerTest(TestRestTemplate template) {
+        this.template = template;
+    }   
     
-    @Test
-    public void inventoryTest() throws InterruptedException {
-        String url = "http://localhost:8000/api/v1/order/find/30";
-        for(int i=0;i<100;i++){
+    @Test // 注意这里的@Test一定要用Junit5的
+    public void getOrderByIdTest() throws InterruptedException {
+        String url = "/api/v1/order/find/30";
+        for(int i=0;i<10;i++){
             TimeUnit.SECONDS.sleep(1);
             int finalI = i;
             new Thread(() -> {
